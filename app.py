@@ -44,3 +44,7 @@ def recognize():
             cv2.imwrite(filename, cv2.cvtColor(face_img, cv2.COLOR_RGB2BGR))
         response.append(name)
     return jsonify(response)
+
+if __name__ == '__main__':
+    import os
+    app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 10000)))
